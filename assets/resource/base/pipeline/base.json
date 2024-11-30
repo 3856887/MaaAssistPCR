@@ -1,12 +1,12 @@
 {
     "Back_Home": {
-        "recognition": "DirectHit", // 点击
-        "action": "Click", // 动作：点击
+        "recognition": "DirectHit",
+        "action": "Click",
         "target": [
-            180,
-            1033,
-            0,
-            0
+            100,
+            680,
+            10,
+            10
         ]
     },
     "MyTask2": {},
