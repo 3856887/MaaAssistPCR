@@ -1,74 +1,31 @@
 {
-    "controller": [
-        {
-            "name": "安卓端",
-            "type": "Adb"
-        },
-        {
-            "name": "桌面端",
-            "type": "Win32",
-            "win32": {
-                "class_regex": ".*",
-                "window_regex": "Visual Studio"
-            }
-        }
-    ],
+    "name": "MaaAssistPCR", //默认为null
+    "version": "v0.0.0", //默认为null
+    "url": "https://github.com/3856887/MaaAssistPCR", //默认为null , 比如 https://github.com/{Github账户}/{Github项目}
+    "custom_title": "MaaAssistPCR", //默认为null, 使用该字段后，标题栏将只显示custom_title和version
+    "default_controller": "adb", //默认为adb, 启动后的默认控制器，可选项 adb , win32 
+    "lock_controller": true, //默认为false, 是否锁定控制器，开启后用户不能在adb和win32中切换控制器
     "resource": [
         {
             "name": "官服",
-            "path": [
-                "{PROJECT_DIR}/resource"
-            ]
+            "path": "{PROJECT_DIR}/resource/base"
         },
         {
-            "name": "B 服",
+            "name": "Bilibili服",
             "path": [
-                "{PROJECT_DIR}/resource",
-                "{PROJECT_DIR}/resource_bilibili"
+                "{PROJECT_DIR}/resource/base",
+                "{PROJECT_DIR}/resource/bilibili"
             ]
         }
     ],
     "task": [
         {
-            "name": "普通任务",
-            "entry": "MyTask1"
-        },
-        {
-            "name": "选项任务",
-            "entry": "MyTask2",
-            "option": [
-                "任务选项1"
-            ]
-        },
-        {
-            "name": "参数任务",
-            "entry": "MyTask3",
-            "option": [
-                "任务选项1"
-            ],
-            "pipeline_override": {}
+            "name": "返回主界面",
+            "entry": "Back_Home",
+            "checked": true, //默认为false，任务默认是否被选中
+            "doc": "文档介绍", //默认为null，显示在任务设置选项底下，可支持富文本，格式在下方
+            "repeatable": true, //默认为false，任务可不可以重复运行
+            "repeat_count": 1, //任务默认重复运行次数，需要repeatable为true
         }
-    ],
-    "option": {
-        "任务选项1": {
-            "cases": [
-                {
-                    "name": "文本1",
-                    "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本1"
-                        }
-                    }
-                },
-                {
-                    "name": "文本2",
-                    "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本2"
-                        }
-                    }
-                }
-            ]
-        }
-    }
+    ]
 }
