@@ -1,0 +1,56 @@
+{
+    "Launch_Game": {
+        "action": "StartApp",
+        "next": [
+            "Back_Home"
+        ],
+        "pre_delay": 500,
+        "post_delay": 500,
+        "package": "com.bilibili.priconne"
+    },
+    "Back_Home": {
+        "recognition": "TemplateMatch",
+        "action": "DoNothing",
+        "template": "./bilibili/image/iron_guild.png",
+        "roi": [10, 10, 100, 100],
+        "timeout": 20000,
+        "interrupt": [
+            "Exception_Handling",
+        ]
+    },
+    "Exception_Handling" {
+        "next": [
+            "Click_Agree",
+            "Click_Close",
+            "Click_Back",
+            "delay_1s"
+        ]
+    },
+    "delay_1s": {
+        "post_delay": 1000
+    },
+    "Click_Agree": {
+        "recognition": "OCR",
+        "action": "Click",
+        "target": true,
+        "roi": [0, 0, 0, 0],
+        "timeout": 5000,
+        "expected": "同意"
+    },
+    "Click_Close": {
+        "recognition": "OCR",
+        "action": "Click",
+        "target": true,
+        "roi": [0, 0, 0, 0],
+        "timeout": 5000,
+        "expected": "关闭"
+    },
+    "Click_Back": {
+        "recognition": "OCR",
+        "action": "Click",
+        "target": true,
+        "roi": [0, 0, 0, 0],
+        "timeout": 5000,
+        "expected": "返回"
+    }
+}

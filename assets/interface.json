@@ -7,21 +7,25 @@
     "lock_controller": false,
     "resource": [
         {
-            "name": "官服",
-            "path": "{PROJECT_DIR}/resource/base"
-        },
-        {
             "name": "Bilibili服",
-            "path": [
-                "{PROJECT_DIR}/resource/base",
+            "path":  [
                 "{PROJECT_DIR}/resource/bilibili"
             ]
+        }
         }
     ],
     "task": [
         {
-            "name": "返回主界面",
-            "entry": "Back_Home",
+            "name": "启动游戏",
+            "entry": "Launch_Game",
+            "checked": true,
+            "doc": "自动启动游戏",
+            "repeatable": true,
+            "repeat_count": 1
+        },
+        {
+            "name": "测试功能",
+            "entry": "Test",
             "checked": true,
             "doc": "文档介绍",
             "repeatable": true,
