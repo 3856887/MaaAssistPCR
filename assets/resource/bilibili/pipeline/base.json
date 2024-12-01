@@ -12,13 +12,18 @@
         "recognition": "TemplateMatch",
         "action": "DoNothing",
         "template": "./bilibili/image/iron_guild.png",
-        "roi": [10, 10, 100, 100],
+        "roi": [
+            10,
+            10,
+            100,
+            100
+        ],
         "timeout": 20000,
         "interrupt": [
-            "Exception_Handling",
+            "Exception_Handling"
         ]
     },
-    "Exception_Handling" {
+    "Exception_Handling": {
         "next": [
             "Click_Agree",
             "Click_Close",
@@ -33,7 +38,12 @@
         "recognition": "OCR",
         "action": "Click",
         "target": true,
-        "roi": [0, 0, 0, 0],
+        "roi": [
+            0,
+            0,
+            0,
+            0
+        ],
         "timeout": 5000,
         "expected": "同意"
     },
@@ -41,7 +51,12 @@
         "recognition": "OCR",
         "action": "Click",
         "target": true,
-        "roi": [0, 0, 0, 0],
+        "roi": [
+            0,
+            0,
+            0,
+            0
+        ],
         "timeout": 5000,
         "expected": "关闭"
     },
@@ -49,7 +64,12 @@
         "recognition": "OCR",
         "action": "Click",
         "target": true,
-        "roi": [0, 0, 0, 0],
+        "roi": [
+            0,
+            0,
+            0,
+            0
+        ],
         "timeout": 5000,
         "expected": "返回"
     }
